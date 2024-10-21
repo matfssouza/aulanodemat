@@ -7,8 +7,9 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
-const routes = require('./routes/routes');
 const db = require('./db/db'); // Módulo de conexão com o banco de dados
+
+const clienteRoutes = require('./routes/clienteroutes'); // Importa as rotas dos clientes
 
 // Configuração do cors: usada para proteger seu sistema online
 const corsOptions = {
@@ -34,7 +35,7 @@ app.get('/', (req, res) => {
 });
 
 // Configuração de rotas
-app.use('/', routes);
+app.use('/', clienteRoutes); // Usa as rotas de clientes sob o caminho /api/clientes
 
 // Middleware de tratamento de erros
 app.use((err, req, res, next) => {
