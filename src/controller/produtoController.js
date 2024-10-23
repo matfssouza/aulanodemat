@@ -1,5 +1,5 @@
+const Joi = require('joi');
 const db = require('../db/db');
-const Joi = require(Joi);
 
 // Validação de produto com Joi 
 // Joi: verifica o tipo
@@ -24,7 +24,6 @@ exports.listarProdutos = async (req, res) => {
 // Buscar um único produto por ID ou Código
 exports.buscarProdutocodigoProduto = async (req, res) => {
     const { codigoProduto } = req.params;
-
     try {
         const [result] = await db.query('SELECT * FROM produto WHERE codigoProduto = ?', [codigoProduto]);
         if (result.length === 0) {

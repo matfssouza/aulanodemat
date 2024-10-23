@@ -10,6 +10,7 @@ const path = require('path');
 const db = require('./db/db'); // Módulo de conexão com o banco de dados
 
 const clienteRoutes = require('./routes/clienteroutes'); // Importa as rotas dos clientes
+const produtoRoutes = require('./routes/produtoroutes');
 
 // Configuração do cors: usada para proteger seu sistema online
 const corsOptions = {
@@ -36,6 +37,7 @@ app.get('/', (req, res) => {
 
 // Configuração de rotas
 app.use('/', clienteRoutes); // Usa as rotas de clientes sob o caminho /api/clientes
+app.use('/', produtoRoutes);
 
 // Middleware de tratamento de erros
 app.use((err, req, res, next) => {

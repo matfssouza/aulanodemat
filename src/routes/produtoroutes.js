@@ -7,7 +7,7 @@ const produtoController = require('../controller/produtoController'); // Importa
 router.get('/produtos', produtoController.listarProdutos);
 
 // Rota para buscar o produto pelo codigo
-router.get('/produtos/:codigo', produtoController.buscarProdutocodigoProduto);
+router.get('/produtos/:codigoProduto', produtoController.buscarProdutocodigoProduto);
 
 // Rota para buscar produtos por nome (prefixo)
 router.get('/produtos/nome/:nomeProduto', produtoController.buscarProdutoNome);
