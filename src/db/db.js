@@ -16,7 +16,7 @@ const db = mysql.createPool({
     try {
         const connection = await db.getConnection();
         console.log('Conexão com o banco de dados estabelecida com o sucesso!');
-        connection.realease(); // Libera a conexão de volta para o pool
+        connection.release(); // Libera a conexão de volta para o pool
     } catch (err) {
         console.error('Erro ao conectar ao banco de dados:', err);
     }
